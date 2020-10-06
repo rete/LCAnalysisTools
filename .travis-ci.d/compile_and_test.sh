@@ -6,7 +6,7 @@ source $ILCSOFT/init_ilcsoft.sh
 cd /Package
 mkdir build
 cd build
-cmake -GNinja -DCMAKE_CXX_FLAGS="-fdiagnostics-color=always" .. && \
+cmake -GNinja -DCMAKE_CXX_FLAGS="-Werror -fdiagnostics-color=always" .. && \
 ninja  -k 0 && \
 ninja install 
 #&& \
