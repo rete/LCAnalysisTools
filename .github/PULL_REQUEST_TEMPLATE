@@ -1,0 +1,11 @@
+
+
+BEGINRELEASENOTES
+- Thank you for writing the text to appear in the release notes. It will show up
+  exactly as it appears between the two bold lines
+- ...
+
+ENDRELEASENOTES
+
+- If your pull request solves an issue, please specify it here as e.g: "Solves #<issue-id>". When the pull request is merged, the issue will be closed automatically
+- If your pull request is work in progress, please write "[WIP]" in the title to let our CI (and us) knows that you are not ready to merge it
