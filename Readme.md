@@ -2,7 +2,7 @@
 
 Collection of various tools for physics analysis with Linear Colliders
 
-[![Build Status](https://travis-ci.org/rete/LCAnalysisTools.svg?branch=master)](https://travis-ci.org/rete/LCAnalysisTools)
+[![Build Status](https://travis-ci.com/rete/LCAnalysisTools.svg?branch=master)](https://travis-ci.com/rete/LCAnalysisTools)
 
 ## Installation
 
