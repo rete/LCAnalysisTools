@@ -1,5 +1,7 @@
+#ifndef _LCANALYSISTOOLS_UTILITIES_H
+#define _LCANALYSISTOOLS_UTILITIES_H
 
-
+// -- std headers
 #include <algorithm>
 #include <vector>
 #include <cmath>
@@ -9,25 +11,35 @@
 
 namespace lc_analysis {
   
+  /// Whether the initializer_list contains the given value
   template <typename T>
   inline bool contains( const std::initializer_list<T> &l, const T &value ) {
     return ( std::find( l.begin(), l.end(), value ) != l.end() ) ;
   }
   
+  /// Whether the vector contains the given value
   template <typename T>
   inline bool contains( const std::vector<T> &l, const T &value ) {
     return ( std::find( l.begin(), l.end(), value ) != l.end() ) ;
   }
   
+  /// Whether the set contains the given value
   template <typename T>
   inline bool contains( const std::set<T> &l, const T &value ) {
     return (l.find( value ) != l.end()) ; 
   }
   
+  /// Performs a floor division
   inline int floorDivision( int i, int div ) {
     return static_cast<int>( std::floor( i / div ) ) ;  
   }
   
+  /// Range class. 
+  /// Equivalent to python range() function
+  /// For looping over ranges, use e.g:
+  /// @code{cpp}
+  /// for( auto v : range<int>( 1, 10, 2 ) ) { /* operation */ }
+  /// @endcode
   template < typename T = size_t >
   class range {
   public:
@@ -98,3 +110,5 @@ namespace lc_analysis {
   };
   
 }
+
+#endif
