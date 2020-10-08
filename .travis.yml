@@ -46,7 +46,7 @@ script:
   - if [[ "$TRAVIS_PULL_REQUEST" == "false" && "${DEPLOY_DOC}" == "ON" && ! -z GITHUB_ACCESS_TOKEN ]];
     then docker exec -e GITHUB_ACCESS_TOKEN=$GITHUB_ACCESS_TOKEN -it CI_container /bin/bash -c "./Package/.travis-ci.d/deploy_doxygen.sh";
     elif [[ "${DEPLOY_DOC}" == "OFF" ]];
-    then travis_wait 30 docker exec -it CI_container /bin/bash -c "./Package/.travis-ci.d/compile_and_test.sh";
+    then travis_wait 30 docker exec -i CI_container /bin/bash -c "./Package/.travis-ci.d/compile_and_test.sh";
     fi
 
 # Don't send e-mail notifications
