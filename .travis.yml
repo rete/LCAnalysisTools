@@ -43,7 +43,7 @@ install:
 # command to run tests
 script:
   - docker run -it --name CI_container -v $PKGDIR:/Package -e COMPILER=$COMPILER -v /cvmfs:/cvmfs -d clicdp/cc7-lcg /bin/bash
-  - travis_wait 30 if [[ "$TRAVIS_PULL_REQUEST" == "false" && "${DEPLOY_DOC}" == "ON" ]];
+  - travis_wait 30 if [[ "$TRAVIS_PULL_REQUEST" == "false" && "${DEPLOY_DOC}" == "ON" && ! -z GITHUB_ACCESS_TOKEN ]];
     then docker exec -e GITHUB_ACCESS_TOKEN=$GITHUB_ACCESS_TOKEN -it CI_container /bin/bash -c "./Package/.travis-ci.d/deploy_doxygen.sh";
     elif [[ "${DEPLOY_DOC}" == "OFF" ]];
     then docker exec -it CI_container /bin/bash -c "./Package/.travis-ci.d/compile_and_test.sh";
