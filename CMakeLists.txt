@@ -38,7 +38,7 @@ install( TARGETS ${PROJECT_NAME} LIBRARY DESTINATION ${CMAKE_INSTALL_LIBDIR} )
 
 # make Marlin processors library
 file( GLOB processors_sources source/plugins/marlin/*.cc )
-if( "${Marlin_FOUND}" AND "${processors_sources}" )
+if( Marlin_FOUND AND processors_sources )
   add_library( ${PROJECT_NAME}Processors MODULE ${processors_sources} )
   add_library( ${PROJECT_NAME}::MarlinProcessors ALIAS ${PROJECT_NAME}Processors )
   target_include_directories( ${PROJECT_NAME}Processors SYSTEM PUBLIC ${Marlin_INCLUDE_DIRS} )
