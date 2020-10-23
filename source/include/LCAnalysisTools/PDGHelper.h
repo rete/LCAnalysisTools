@@ -13,8 +13,6 @@ namespace lc_analysis {
   
   namespace pdg {
     
-    
-    
     static constexpr std::size_t MaxDigits = 10 ;    
     using Digits = std::array<int8_t, MaxDigits> ;
     class PDGHelper ;
@@ -62,6 +60,7 @@ namespace lc_analysis {
     class ParticleData {
       friend class PDGHelper ;
       
+    public:
       /// The particle data structure
       struct Data {
         int                        _pdgid {0} ;
@@ -126,9 +125,6 @@ namespace lc_analysis {
       /// The particle data
       Data             _data {} ;
     };
-    
-    /// The particle data table defined in PDGTable.cc
-    extern const std::vector<ParticleData> pdgTable ;
     
     //----------------------------------------------------------------------------
     //----------------------------------------------------------------------------
