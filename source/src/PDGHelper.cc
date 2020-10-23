@@ -15,12 +15,7 @@ namespace lc_analysis {
   namespace pdg {
     
     const ParticleData &PDGHelper::particle( int pdg ) {
-      auto iter = std::find_if( pdgTable.begin(), pdgTable.end(), [&]( auto part ) { return part._data._pdgid == pdg ; } ) ;
-      if( pdgTable.end() == iter ) {
-        std::stringstream ss ; ss << "Particle with pdg id " << pdg << " not found" << std::endl ;
-        throw std::runtime_error( ss.str() ) ;
-      }
-      return *iter ;
+      return PDGTable::instance().particle( pdg ) ;
     }
     
     //----------------------------------------------------------------------------
